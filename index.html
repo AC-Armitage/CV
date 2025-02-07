@@ -1,0 +1,626 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Abderrahim CHABIR - </title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        :root {
+            --color-primary: #1a237e;
+            --color-secondary: #64b5f6;
+            --color-background: #f5f5f7;
+            --color-text: #333;
+            --color-text-light: #666;
+            --color-accent: #2196f3;
+            --card-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            --transition-speed: 0.3s;
+            --spacing-unit: 1rem;
+            --border-radius: 8px;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+            color: var(--color-text);
+            background-color: var(--color-background);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1rem;
+        }
+        .header_container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1rem;
+            display: flex;
+            align-items: center; 
+            gap: 3rem;
+        }
+
+        .profile-picture {
+            width: 200px;
+            height: 200px; 
+            object-fit: cover; 
+        }
+        header {
+            background: linear-gradient(135deg, var(--color-primary), var(--color-secondary));
+            color: white;
+            padding: 3rem 1rem;
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+        header h1 {
+            font-size: 2.8rem;
+            margin-bottom: 0.5rem;
+            font-weight: 700;
+            letter-spacing: 0.5px;
+        }
+
+        header h2 {
+            font-size: 1.6rem;
+            font-weight: 500;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+        }
+
+        .contact-info {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+        }
+
+        .contact-info a {
+            color: white;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.5rem;
+            transition: transform 0.2s ease;
+        }
+
+        .contact-info a:hover {
+            transform: translateY(-2px);
+        }
+
+        .contact-info i {
+            font-size: 1.2rem;
+        }
+
+        .contact-info span {
+            font-size: 1rem;
+        }
+
+        .contact-divider {
+            color: rgba(255, 255, 255, 0.5);
+            font-weight: 300;
+        }
+
+        .section {
+            padding: calc(var(--spacing-unit) * 2);
+            margin: calc(var(--spacing-unit) * 2) auto;
+            max-width: 1200px;
+            background: white;
+            border-radius: var(--border-radius);
+            box-shadow: var(--card-shadow);
+        }
+
+        .section h2 {
+            color: var(--color-primary);
+            margin-bottom: calc(var(--spacing-unit) * 2);
+            font-size: 1.8rem;
+        }
+
+        .experience-item {
+            margin-bottom: calc(var(--spacing-unit) * 3);
+        }
+
+        .experience-item h3 {
+            color: var(--color-primary);
+            margin-bottom: var(--spacing-unit);
+        }
+
+        .experience-item h4 {
+            color: var(--color-accent);
+            margin: var(--spacing-unit) 0;
+        }
+
+        .experience-item .date {
+            color: var(--color-text-light);
+            font-style: italic;
+        }
+
+        .experience-item ul {
+            list-style-type: none;
+            padding-left: calc(var(--spacing-unit) * 1.5);
+        }
+
+        .experience-item li {
+            position: relative;
+            margin-bottom: calc(var(--spacing-unit) * 0.5);
+        }
+
+        .experience-item li::before {
+            content: '▹';
+            position: absolute;
+            left: -1.5rem;
+            color: var(--color-accent);
+        }
+        .skills-grid {
+            display: flex;
+            align-items: center;
+        }
+
+        .skill-category {
+            flex: 1;
+        }
+
+        .badges {
+            margin-right: 40px; /* Push badges to the right */
+            display: flex;
+            gap: 20px; /* Space between images */
+        }
+
+        .badge-img {
+            width: 120px;
+            height: auto;
+            margin-right: 40px;
+        }
+
+        .skill-category h3 {
+            color: var(--color-accent);
+            margin-bottom: var(--spacing-unit);
+            
+        }
+
+        .skill-category ul {
+            list-style-type: none;
+        }
+
+        .skill-category li {
+            margin-bottom: calc(var(--spacing-unit) * 0.5);
+            position: relative;
+            padding-left: calc(var(--spacing-unit) * 1.5);
+        }
+
+        .skill-category li::before {
+            content: '•';
+            position: absolute;
+            left: 0;
+            color: var(--color-accent);
+        }
+
+        .languages-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: var(--spacing-unit);
+            text-align: center;
+        }
+
+        .language-item {
+            padding: var(--spacing-unit);
+            background: rgba(0, 0, 0, 0.02);
+            border-radius: var(--border-radius);
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+
+        .language-item .language {
+            font-weight: 600;
+            color: var(--color-primary);
+            font-size: 1.1rem;
+        }
+
+        .language-item .proficiency {
+            color: var(--color-text-light);
+            font-size: 0.9rem;
+        }
+
+        .engagement-list {
+            list-style-type: none;
+            padding-left: calc(var(--spacing-unit) * 1.5);
+        }
+
+        .engagement-list li {
+            position: relative;
+            margin-bottom: var(--spacing-unit);
+        }
+
+        .engagement-list li::before {
+            content: '→';
+            position: absolute;
+            left: -1.5rem;
+            color: var(--color-accent);
+        }
+        .achievements-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: calc(var(--spacing-unit) * 2);
+            margin-top: var(--spacing-unit);
+        }
+
+        .achievement-item {
+            background: white;
+            padding: calc(var(--spacing-unit) * 2);
+            border-radius: var(--border-radius);
+            box-shadow: var(--card-shadow);
+            text-align: center;
+            transition: transform var(--transition-speed);
+        }
+
+        .achievement-item:hover {
+            transform: translateY(-5px);
+        }
+
+        .achievement-item i {
+            font-size: 2rem;
+            color: var(--color-accent);
+            margin-bottom: var(--spacing-unit);
+        }
+
+        .achievement-item h3 {
+            color: var(--color-primary);
+            margin-bottom: var(--spacing-unit);
+        }
+
+        /* Project Styles */
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: calc(var(--spacing-unit) * 2);
+            margin-top: var(--spacing-unit);
+        }
+
+        .project-item {
+            background: white;
+            padding: calc(var(--spacing-unit) * 2);
+            border-radius: var(--border-radius);
+            box-shadow: var(--card-shadow);
+            transition: transform var(--transition-speed);
+        }
+
+        .project-item:hover {
+            transform: translateY(-5px);
+        }
+
+        .project-item h3 {
+            color: var(--color-primary);
+            margin-bottom: var(--spacing-unit);
+        }
+
+        .project-tags {
+            display: flex;
+            gap: 0.5rem;
+            margin-bottom: var(--spacing-unit);
+            flex-wrap: wrap;
+        }
+
+        .project-tags span {
+            background: var(--color-background);
+            padding: 0.25rem 0.75rem;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            color: var(--color-text-light);
+        }
+
+        .project-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--color-accent);
+            text-decoration: none;
+            margin-top: var(--spacing-unit);
+            transition: color var(--transition-speed);
+        }
+
+        .project-link:hover {
+            color: var(--color-primary);
+        }
+
+        @media (max-width: 768px) {
+            .achievements-grid,
+            .projects-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+        @keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes scaleIn {
+    from {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* Header Animation */
+.header {
+    animation: fadeIn 1s ease-out;
+}
+
+/* Section Animations */
+.section {
+    opacity: 0;
+    animation: fadeIn 0.8s ease-out forwards;
+}
+
+/* Timeline Animations */
+.timeline-item {
+    opacity: 0;
+    animation: slideInLeft 0.6s ease-out forwards;
+}
+
+/* Staggered Animations */
+.section:nth-child(1) { animation-delay: 0.2s; }
+.section:nth-child(2) { animation-delay: 0.4s; }
+.section:nth-child(3) { animation-delay: 0.6s; }
+.section:nth-child(4) { animation-delay: 0.8s; }
+.section:nth-child(5) { animation-delay: 1s; }
+.section:nth-child(6) { animation-delay: 1.2s; }
+
+/* Timeline Item Delays */
+.timeline-item:nth-child(1) { animation-delay: 0.3s; }
+.timeline-item:nth-child(2) { animation-delay: 0.5s; }
+.timeline-item:nth-child(3) { animation-delay: 0.7s; }
+
+/* Skill Category Animations */
+.skill-category {
+    opacity: 0;
+    animation: scaleIn 0.6s ease-out forwards;
+}
+
+.skill-category:nth-child(1) { animation-delay: 0.2s; }
+.skill-category:nth-child(2) { animation-delay: 0.4s; }
+.skill-category:nth-child(3) { animation-delay: 0.6s; }
+
+/* Language Item Animations */
+.language-item {
+    opacity: 0;
+    animation: scaleIn 0.6s ease-out forwards;
+}
+
+.language-item:nth-child(1) { animation-delay: 0.2s; }
+.language-item:nth-child(2) { animation-delay: 0.4s; }
+.language-item:nth-child(3) { animation-delay: 0.6s; }
+
+/* Hover Animations */
+.card:hover {
+    transform: translateY(-2px);
+    transition: transform 0.3s ease;
+}
+
+.contact-links a:hover {
+    transform: translateY(-2px);
+    transition: transform 0.3s ease;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    * {
+        animation: none !important;
+        transition: none !important;
+    }
+}
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 2rem;
+            }
+
+            header h2 {
+                font-size: 1.2rem;
+            }
+
+            .section {
+                margin: var(--spacing-unit);
+                padding: var(--spacing-unit);
+            }
+
+            .skills-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .languages-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .contact-info {
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            .contact-divider {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+<header>
+    <div class="header_container">
+        <img src="face.jpeg" alt="Abderrahim Chabir" class="profile-picture">
+        <div class="header-text">
+            <h1>CHABIR Abderrahim</h1>
+            <h2>Étudiant en Licence Cybersécurité & Cloud | EST Sidi Bennour</h2>
+            <div class="contact-info">
+                <a href="mailto:chabirabd@gmail.com">
+                    <i class="fas fa-envelope"></i>
+                    <span> chabirabd@gmail.com</span>
+                </a>
+                <span class="contact-divider">|</span>
+                <a href="tel:+212621641230">
+                    <i class="fas fa-phone"></i>
+                    <span> +212 621641230</span>
+                </a>
+                <span class="contact-divider">|</span>
+                <a href="https://www.linkedin.com/in/abderrahim-chabir-61442a276/">
+                    <i class="fab fa-linkedin"></i>
+                    <span>LinkedIn</span>
+                </a>
+                <span class="contact-divider">|</span>
+                <a href="https://github.com/AC-Armitage">
+                    <i class="fab fa-github"></i>
+                    <span>GitHub</span>
+                </a>
+            </div>
+        </div>
+    </div>
+</header>
+
+
+
+</style>
+
+
+    <main class="container">
+        <section class="section">
+            <h2>Profil Professionnel</h2>
+            <p>Spécialiste en cybersécurité et cloud, avec une expertise approfondie en réseaux, administration Linux et scripting Bash/Python. Solide maîtrise des méthodologies de sécurité, des solutions SOC, ainsi que de l'administration et la maintenance des systèmes. Compétences en DevOps, DevSecOps, ainsi qu'en conteneurisation et orchestration avec Kubernetes, Doté d’une capacité à mener des audits de sécurité approfondis, à résoudre des défis complexes et à partager mes connaissances, je m’engage à développer des solutions innovantes pour relever les défis actuels de la cybersécurité. </p>
+        </section>
+
+        <section class="section">
+            <h2>Formation</h2>
+            <div class="experience-item">
+                <h3>Licence Cybersécurité et technlogies cloud  
+                </h3>
+                <p class="experience-company">Ecole Supérieure de Technologie Sidi Bennour | En cours 
+                </p>
+            </div>
+            <div class="experience-item">
+                <h3>Diplôme Technicien spécialisé en Cybersécurité 
+                </h3>
+                <p class="experience-company">La Cité des Métiers et des Compétences de Souss-Massa | 2022 - 2024</p>
+            </div>
+        </section>
+        <section class="section">
+            <h2>Certifications Professionnelles</h2>
+            <div class="skills-grid">
+                <div class="skill-category">
+                    <h3>Certifications Principales</h3>
+                    <ul>
+                        <li>Digital Forensics Essentials (DFE)</li>
+                        <li>Cisco Network Security</li>
+                        <li>Cisco Network Defence</li>
+                        <li>Cisco Cyber Threat Management</li>
+                        <li>CCNA : Introduction aux réseaux</li>
+                    </ul>
+                </div>
+                    <img src="nd.png" alt="Network Defence Badge" class="badge-img">
+                    <img src="ns.png" alt="Network Security Badge" class="badge-img">
+                <div class="badges">
+            </div>
+        </section>        
+
+
+        <section class="section">
+            <h2>Expérience Professionnelle</h2>
+            <div class="experience-item">
+                <h4>Stagiaire a Storeino (Pentester)</h4>
+                <ul>
+                    <li>Activités de red teaming et tests de sécurité web. </li>
+                    <li> Rédaction de rapports de pentest avec analyses et recommandations. </li>
+                    <li>Conduite d'audits de sécurité complets</li>
+                    <li>Développement de méthodologies de test et de rapports de sécurité standardisés</li>
+                </ul>
+                <h4>Programmation personnelle sur mon temps libre</h4>
+                <ul>
+                    <li>Développement de scripts de web scraping en Python</li>
+                    <li>Développement d'outils de sécurité sous Github (C++/Python/bash)</li>
+                </ul>
+            </div>
+
+        </section>
+
+
+        <section class="section">
+            <h2>Compétences Techniques</h2>
+                <div class="skill-category">
+                    <ul>
+                        <li>Administration Linux (5 ans d'expérience avec différentes distributions : Debian, Fedora, Arch...)</li>
+                        <li>Expérience en DevOps et DevSecOps, garantissant la sécurité des pipelines CI/CD automatisés sur GitHub Actions, GitLab Pipelines et OCI DevOps, avec une bonne maîtrise des outils d'automatisation tels qu'Ansible, Jenkins et Terraform.</li>
+                        <li>Configuration et gestion d'environnements SIEM (Elastic Stack, Wazuh) et de systèmes IDS/IPS (Snort, Suricata, etc.)</li>
+                        <li>Compétences en virtualisation (KVM/QEMU, Proxmox, VMware ESXi/Workstation, VirtualBox) et en conteneurisation (Docker, Podman, Kubernetes).</li>
+                        <li>Compétences en programmation en Python, Bash et C/C++.</li>
+                        <li>Administration d'autres systèmes d'exploitation (Windows, Windows Server, FreeBSD) </li>
+                        <li>Configuration and maintenance of firewalls (pfSense, Fortinet) and Cisco network equipment </li>
+                        <li>Outils de Pentesting : Suite complète d'outils de test d'intrusion</li>
+                    </ul>
+                </div>
+        </section>
+        <section class="section">
+            <h2>Langues</h2>
+            <div class="languages-grid">
+                <div class="language-item">
+                    <span class="language">Anglais</span>
+                    <span class="proficiency">C1+</span>
+                </div>
+                <div class="language-item">
+                    <span class="language">Français</span>
+                    <span class="proficiency">B2</span>
+                </div>
+                <div class="language-item">
+                    <span class="language">Tamazight</span>
+                    <span class="proficiency">Langue maternelle</span>
+                </div>
+                <div class="language-item">
+                    <span class="language">Arabe</span>
+                    <span class="proficiency">Maîtrise</span>
+                </div>
+            </div>
+        </section>
+        
+        <section class="section">
+            <h2>Projets</h2>
+            <div class="projects-grid">
+                <div class="project-item">
+                    <h3>Akaunting_DevSecOps</h3>
+                    <div class="project-tags">
+                        <span>Kubernetes</span>
+                        <span>Sécurité</span>
+                        <span>DevSecOps</span>
+                        <span>GitHub Actions</span>
+                        <span>Sonarqube</span>
+                    </div>
+                    <p>Ce dépôt présente une pipeline CI/CD complète qui intègre les pratiques DevSecOps modernes afin de garantir un développement et un déploiement d'application sécurisés. L'application web Akounting, construite avec Docker, est analysée avec SonarQube pour assurer la qualité et détecter les vulnérabilités de sécurité. L'application est ensuite déployée sur Kubernetes de manière sécurisée, en utilisant GitHub Actions ainsi que les Secrets GitHub et Kubernetes pour la gestion des données sensibles. De plus, l'image Docker est scannée et approuvée par la SonarQube quality gate avant d'être déployée, garantissant que l'application respecte les normes de sécurité et de qualité tout au long du processus. </p>
+                    <a href="https://github.com/AC-Armitage/Akaunting_DevSecOps" class="project-link">
+                        <i class="fab fa-github"></i> Voir sur GitHub
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+</body>
+</html>

@@ -1,0 +1,100 @@
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes scaleIn {
+    from {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* Header Animation */
+.header {
+    animation: fadeIn 1s ease-out;
+}
+
+/* Section Animations */
+.section {
+    opacity: 0;
+    animation: fadeIn 0.8s ease-out forwards;
+}
+
+/* Timeline Animations */
+.timeline-item {
+    opacity: 0;
+    animation: slideInLeft 0.6s ease-out forwards;
+}
+
+/* Staggered Animations */
+.section:nth-child(1) { animation-delay: 0.2s; }
+.section:nth-child(2) { animation-delay: 0.4s; }
+.section:nth-child(3) { animation-delay: 0.6s; }
+.section:nth-child(4) { animation-delay: 0.8s; }
+.section:nth-child(5) { animation-delay: 1s; }
+.section:nth-child(6) { animation-delay: 1.2s; }
+
+/* Timeline Item Delays */
+.timeline-item:nth-child(1) { animation-delay: 0.3s; }
+.timeline-item:nth-child(2) { animation-delay: 0.5s; }
+.timeline-item:nth-child(3) { animation-delay: 0.7s; }
+
+/* Skill Category Animations */
+.skill-category {
+    opacity: 0;
+    animation: scaleIn 0.6s ease-out forwards;
+}
+
+.skill-category:nth-child(1) { animation-delay: 0.2s; }
+.skill-category:nth-child(2) { animation-delay: 0.4s; }
+.skill-category:nth-child(3) { animation-delay: 0.6s; }
+
+/* Language Item Animations */
+.language-item {
+    opacity: 0;
+    animation: scaleIn 0.6s ease-out forwards;
+}
+
+.language-item:nth-child(1) { animation-delay: 0.2s; }
+.language-item:nth-child(2) { animation-delay: 0.4s; }
+.language-item:nth-child(3) { animation-delay: 0.6s; }
+
+/* Hover Animations */
+.card:hover {
+    transform: translateY(-2px);
+    transition: transform 0.3s ease;
+}
+
+.contact-links a:hover {
+    transform: translateY(-2px);
+    transition: transform 0.3s ease;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    * {
+        animation: none !important;
+        transition: none !important;
+    }
+}
