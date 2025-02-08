@@ -26,6 +26,9 @@ jobs:
 
       - name: Build and Push Docker Image
         run: |
+          ls -la /home/
+          ls -la /home/ubuntu/
+          ls -la /home/ubuntu/CV/
           docker build -t docker.io/chabir/resume:latest -f /home/ubuntu/CV/Dockerfile /home/ubuntu/CV/
           docker push docker.io/chabir/resume:latest
 
