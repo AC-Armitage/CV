@@ -8,7 +8,7 @@ COPY face.jpeg /usr/share/nginx/html/
 COPY nd.png /usr/share/nginx/html/
 COPY ns.png /usr/share/nginx/html/
 
-EXPOSE 443 
+EXPOSE 80 443 
 
 CMD ["nginx", "-g", "daemon off;"]
 
