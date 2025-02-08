@@ -49,7 +49,8 @@ jobs:
           docker stop resume || true
           docker rm resume || true
           docker run -d --name resume -p 80:80 -p 443:443 \
-            -v /home/ubuntu/CV/certs/cv.chabir.com:/etc/nginx/certs/ \
+            -v /home/ubuntu/CV/certs/cv.chabir.com/fullchain.pem:/etc/nginx/certs/fullchain.pem \
+            -v /home/ubuntu/CV/certs/cv.chabir.com/privkey.pem:/etc/nginx/certs/privkey.pem \
             -v /home/ubuntu/CV/nginx-conf:/etc/nginx/conf.d/ \
             docker.io/chabir/resume:latest
           EOF
