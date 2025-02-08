@@ -26,6 +26,7 @@ jobs:
 
       - name: Build and Push Docker Image
         run: |
+          cd /home/ubuntu/CV/
           docker build . -t docker.io/chabir/resume:latest
           docker push docker.io/chabir/resume:latest
 
