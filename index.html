@@ -58,6 +58,19 @@
             text-align: center;
             margin-bottom: 2rem;
         }
+        .two-column-container {
+            display: flex;
+            gap: 2rem;
+        }
+
+        .two-column-container .section {
+            flex: 1;
+        }
+        @media (max-width: 768px) {
+            .two-column-container {
+                flex-direction: column; 
+            }
+        }
         header h1 {
             font-size: 2.8rem;
             margin-bottom: 0.5rem;
@@ -511,20 +524,37 @@
             <p>Spécialiste en cybersécurité et cloud, avec une expertise approfondie en réseaux, administration Linux et scripting Bash/Python. Solide maîtrise des méthodologies de sécurité, des solutions SOC, ainsi que de l'administration et la maintenance des systèmes. Compétences en DevOps, DevSecOps, ainsi qu'en conteneurisation et orchestration avec Kubernetes, Doté d’une capacité à mener des audits de sécurité approfondis, à résoudre des défis complexes et à partager mes connaissances, je m’engage à développer des solutions innovantes pour relever les défis actuels de la cybersécurité. </p>
         </section>
 
-        <section class="section">
-            <h2>Formation</h2>
-            <div class="experience-item">
-                <h3>Licence Cybersécurité et technlogies cloud  
-                </h3>
-                <p class="experience-company">Ecole Supérieure de Technologie Sidi Bennour | En cours 
-                </p>
-            </div>
-            <div class="experience-item">
-                <h3>Diplôme Technicien spécialisé en Cybersécurité 
-                </h3>
-                <p class="experience-company">La Cité des Métiers et des Compétences de Souss-Massa | 2022 - 2024</p>
-            </div>
-        </section>
+        <div class="two-column-container">
+            <section class="section">
+                <h2>Formation</h2>
+                <div class="experience-item">
+                    <h3>Licence Cybersécurité et technologies cloud</h3>
+                    <p class="experience-company">Ecole Supérieure de Technologie Sidi Bennour | En cours</p>
+                </div>
+                <div class="experience-item">
+                    <h3>Diplôme Technicien spécialisé en Cybersécurité</h3>
+                    <p class="experience-company">La Cité des Métiers et des Compétences de Souss-Massa | 2022 - 2024</p>
+                </div>
+            </section>
+        
+            <section class="section">
+                <h2>Expérience Professionnelle</h2>
+                <div class="experience-item">
+                    <h4>Stagiaire à Storeino (Pentester)</h4>
+                    <ul>
+                        <li>Activités de red teaming et tests de sécurité web.</li>
+                        <li>Rédaction de rapports de pentest avec analyses et recommandations.</li>
+                        <li>Conduite d'audits de sécurité complets</li>
+                        <li>Développement de méthodologies de test et de rapports de sécurité standardisés</li>
+                    </ul>
+                    <h4>Programmation personnelle sur mon temps libre</h4>
+                    <ul>
+                        <li>Développement de scripts de web scraping en Python</li>
+                        <li>Développement d'outils de sécurité sous Github (C++/Python/bash)</li>
+                    </ul>
+                </div>
+            </section>
+        </div>
         <section class="section">
             <h2>Certifications Professionnelles</h2>
             <div class="skills-grid">
@@ -544,27 +574,6 @@
             </div>
         </section>        
 
-
-        <section class="section">
-            <h2>Expérience Professionnelle</h2>
-            <div class="experience-item">
-                <h4>Stagiaire a Storeino (Pentester)</h4>
-                <ul>
-                    <li>Activités de red teaming et tests de sécurité web. </li>
-                    <li> Rédaction de rapports de pentest avec analyses et recommandations. </li>
-                    <li>Conduite d'audits de sécurité complets</li>
-                    <li>Développement de méthodologies de test et de rapports de sécurité standardisés</li>
-                </ul>
-                <h4>Programmation personnelle sur mon temps libre</h4>
-                <ul>
-                    <li>Développement de scripts de web scraping en Python</li>
-                    <li>Développement d'outils de sécurité sous Github (C++/Python/bash)</li>
-                </ul>
-            </div>
-
-        </section>
-
-
         <section class="section">
             <h2>Compétences Techniques</h2>
                 <div class="skill-category">
@@ -575,7 +584,7 @@
                         <li>Compétences en virtualisation (KVM/QEMU, Proxmox, VMware ESXi/Workstation, VirtualBox) et en conteneurisation (Docker, Podman, Kubernetes).</li>
                         <li>Compétences en programmation en Python, Bash et C/C++.</li>
                         <li>Administration d'autres systèmes d'exploitation (Windows, Windows Server, FreeBSD) </li>
-                        <li>Configuration and maintenance of firewalls (pfSense, Fortinet) and Cisco network equipment </li>
+                        <li>Configuration et maintenance de pare-feux (pfSense, Fortinet) et d'équipements réseau Cisco. </li>
                         <li>Outils de Pentesting : Suite complète d'outils de test d'intrusion</li>
                     </ul>
                 </div>
