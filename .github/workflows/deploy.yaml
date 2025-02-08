@@ -9,7 +9,7 @@ jobs:
   checkout:
     name: checkout
     uses: actions/checkout@v4
-      with:
+    with:
         repository: ''
         token: ${{ secrets.GH_TOKEN }}
 
