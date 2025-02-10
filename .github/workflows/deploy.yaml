@@ -46,11 +46,13 @@ jobs:
           ssh -i /tmp/ssh_key -o StrictHostKeyChecking=no ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }} << 'EOF'
           echo "${{ secrets.DOCKER_PASSWORD }}" | docker login -u "${{ secrets.DOCKER_LOGIN }}" --password-stdin
           docker pull docker.io/chabir/resume:latest
-          docker stop resume || true
-          docker rm resume || true
-          docker run -d --name resume -p 80:80 -p 443:443 \
-            -v /home/ubuntu/CV/certs/cv.chabir.com/fullchain.pem:/etc/nginx/certs/cv.chabir.com/fullchain.pem\
-            -v /home/ubuntu/CV/certs/cv.chabir.com/privkey.pem:/etc/nginx/certs/cv.chabir.com/privkey.pem \
-            -v /home/ubuntu/CV/nginx-conf:/etc/nginx/conf.d/ \
-            docker.io/chabir/resume:latest
+          #docker stop resume || true
+          #docker rm resume || true
+          docker pull docker.io/chabir/resume:latest 
+          docker-compose up -d --no-deps resume
+          #docker run -d --name resume -p 80:80 -p 443:443 \
+          #  -v /home/ubuntu/CV/certs/cv.chabir.com/fullchain.pem:/etc/nginx/certs/cv.chabir.com/fullchain.pem\
+          #  -v /home/ubuntu/CV/certs/cv.chabir.com/privkey.pem:/etc/nginx/certs/cv.chabir.com/privkey.pem \
+          #  -v /home/ubuntu/CV/nginx-conf:/etc/nginx/conf.d/ \
+          #  docker.io/chabir/resume:latest
           EOF
