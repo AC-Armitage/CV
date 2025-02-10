@@ -49,7 +49,7 @@ jobs:
           #docker stop resume || true
           #docker rm resume || true
           docker pull docker.io/chabir/resume:latest 
-          docker-compose up -d --no-deps resume
+          docker compose up -d --no-deps resume
           #docker run -d --name resume -p 80:80 -p 443:443 \
           #  -v /home/ubuntu/CV/certs/cv.chabir.com/fullchain.pem:/etc/nginx/certs/cv.chabir.com/fullchain.pem\
           #  -v /home/ubuntu/CV/certs/cv.chabir.com/privkey.pem:/etc/nginx/certs/cv.chabir.com/privkey.pem \
