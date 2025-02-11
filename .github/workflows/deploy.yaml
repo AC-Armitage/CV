@@ -48,6 +48,7 @@ jobs:
           docker pull docker.io/chabir/resume:latest
           #docker stop resume || true
           #docker rm resume || true
+          cd /home/ubuntu/Blog/ 
           docker pull docker.io/chabir/resume:latest 
           docker compose up -d 
           #docker run -d --name resume -p 80:80 -p 443:443 \
